@@ -21,6 +21,8 @@ public class Principal {
             System.out.println("Seleccione una opción");
             System.out.println("a - Si desea sumar");
             System.out.println("b - Si desea restar");
+            System.out.println("c - Si desea multiplicar");
+            System.out.println("d - Si desea dividir");
             System.out.println("Escriba su opción");
             // Recibe el valor del buffer del teclado
             String strOpcion = objInput.nextLine();
@@ -53,6 +55,38 @@ public class Principal {
                         fltArrNumeros[i]=objInput.nextFloat();
                     }
                      fltResultado=fltArrNumeros[0]+fltArrNumeros[1];
+                     
+                     //Control
+                     blnError=false;
+                     //Sale del case
+                     break;
+                case "c":
+                    strOpcion ="Multiplicar";
+                    System.out.println("");
+                    //Solicitar los valores numericos
+                    for (int i =0; i<2;i++){
+                        System.out.println("Ingrese el numero " +(i+1)+ " : ");
+                        fltArrNumeros[i]=objInput.nextFloat();
+                    }
+                     fltResultado=fltArrNumeros[0]*fltArrNumeros[1];
+                     
+                     //Control
+                     blnError=false;
+                     //Sale del case
+                     break;
+                case "d":
+                    strOpcion ="Dividir";
+                    System.out.println("");
+                    //Solicitar los valores numericos
+                    for (int i =0; i<2;i++){
+                        System.out.println("Ingrese el numero " +(i+1)+ " : ");
+                        fltArrNumeros[i]=objInput.nextFloat();
+                        if (fltArrNumeros[i]==0){
+                            System.out.println("Numero no puede ser 0");
+                            i=i-1;
+                        }
+                    }
+                     fltResultado=fltArrNumeros[0]/fltArrNumeros[1];
                      
                      //Control
                      blnError=false;
